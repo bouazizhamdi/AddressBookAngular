@@ -1,1 +1,39 @@
-<h1>New Contact</h1>
+<div class="allContent">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>New Contact</mat-card-title>
+            <mat-card-subtitle>Fill out all fields</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="newContactForm">
+
+            <div class="formFields">
+
+                <mat-form-field class="full-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Phone</mat-label>
+                    <input matInput formControlName="phone">
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address">
+                </mat-form-field>
+            </div>
+
+            <mat-card-actions>
+                <button class="actionButtons" mat-raised-button>Cancel</button>
+                <button type="button" class="actionButtons" mat-raised-button [disabled]="!newContactForm.valid"
+                    (click)="createNewContact()" color="primary">Create</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Delete this contact?</h2>
+<mat-dialog-content>
+    <h3>First Name: {{contact.FirstName}}</h3>
+    <h3>Last Name: {{contact.LastName}}</h3>
+    <h3>Phone: {{contact.Phone}}</h3>
+    <h3>Address: {{contact.Address}}</h3>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button (click)="deleteContact()" mat-raised-button cdkFocusInitial [mat-dialog-close]="true"
+        color="warn">Delete</button>
+</mat-dialog-actions>
